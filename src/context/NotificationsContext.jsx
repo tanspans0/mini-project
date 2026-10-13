@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { useAuth } from './AuthContext'
-import { generateRegularTimetable } from '../data/timetable'
+import { getTimetable, filterByBatch } from '../data/timetableSource'
 import { buildScheduleNotifications } from '../utils/changeDetection'
 import { events } from '../data/events'
 
@@ -21,7 +21,7 @@ export function NotificationsProvider({ children }) {
     if (!user) return []
     const deptId = user.department || 'comp'
     const semester = user.semester || 'SEM III'
-    const timetable = generateRegularTimetable(deptId, semester)
+    const timetable = filterByBatch(getTimetable(deptId, semester, user.division), user.batch)
     const scheduleNotifs = buildScheduleNotifications(timetable, deptId, semester)
 
     const eventNotifs = events.slice(0, 2).map(ev => ({

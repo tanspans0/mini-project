@@ -11,6 +11,8 @@ export const mockUsers = [
     name: 'Ananya Mehta',
     department: 'comp',
     semester: 'SEM III',
+    division: 'C1', // demo value, change to the student's real division
+    batch: 'C11',   // demo value, change to the student's real batch
   },
   {
     email: 'teacher@tsec.edu',

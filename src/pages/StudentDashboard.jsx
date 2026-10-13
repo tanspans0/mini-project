@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext'
 import { useNotifications } from '../context/NotificationsContext'
-import { generateRegularTimetable, days as ttDays } from '../data/timetable'
+import { getTimetable, filterByBatch, placeLabel } from '../data/timetableSource'
 import { getEffectiveSlot } from '../utils/changeDetection'
 import { departments } from '../data/departments'
 import DashboardCard from '../components/DashboardCard'
@@ -16,7 +16,10 @@ export default function StudentDashboard() {
   const { notifications } = useNotifications()
   const { events, seminars } = useData()
   const dept = departments.find(d => d.id === user?.department)
-  const timetable = generateRegularTimetable(user?.department || 'comp', user?.semester || 'SEM III')
+  const timetable = filterByBatch(
+    getTimetable(user?.department || 'comp', user?.semester || 'SEM III', user?.division),
+    user?.batch,
+  )
   const todaySlots = (timetable[TODAY_NAME] || []).map(s => ({ regular: s, ...getEffectiveSlot(s) }))
   const changedToday = todaySlots.filter(s => s.changed)
 
@@ -54,8 +57,8 @@ export default function StudentDashboard() {
           <div className="schedule-item" key={regular.id}>
             <div className="schedule-time">{slot.time}</div>
             <div className="schedule-info">
-              <h4 style={{ textDecoration: slot.status === 'cancelled' ? 'line-through' : 'none' }}>{slot.subject}</h4>
-              <div className="meta">{slot.faculty} · {slot.room} · {slot.building}</div>
+              <h4 style={{ textDecoration: slot.status === 'cancelled' ? 'line-through' : 'none' }}>{slot.batch ? `${slot.batch} · ` : ''}{slot.subject}</h4>
+              <div className="meta">{[slot.faculty, placeLabel(slot)].filter(Boolean).join(' · ')}</div>
               {slot.status === 'cancelled' && <span className="badge badge-bad" style={{ marginTop: 4 }}>Cancelled</span>}
               {changed && slot.status !== 'cancelled' && <span className="badge badge-warn" style={{ marginTop: 4 }}>Room/Time updated</span>}
             </div>
