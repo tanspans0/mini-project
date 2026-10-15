@@ -5,7 +5,7 @@ const features = [
   { title: 'Smart Timetable', desc: 'One weekly grid per department and semester, filterable by day and building.' },
   { title: 'Real-Time Updates', desc: 'Room, timing or building changes surface instantly as a schedule-change alert.' },
   { title: 'Event Management', desc: 'Fests, workshops and seminars listed with venue, floor and organizing committee.' },
-  { title: 'Role-Based Access', desc: 'Students view, teachers book and manage, and management oversees the full campus.' },
+  { title: 'Role-Based Access', desc: 'Students view, teachers book and manage, and admin oversees the full campus.' },
 ]
 
 export default function Home() {

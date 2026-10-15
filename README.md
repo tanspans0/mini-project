@@ -3,7 +3,7 @@
 A frontend React prototype for **Thadomal Shahani Engineering College** that
 centralizes timetables, room/lab/seminar-hall availability, events and
 real-time schedule-change notifications across the Old Building and New
-Building, for three roles: **Student**, **Teacher** and **Management**.
+Building, for three roles: **Student**, **Teacher** and **Admin**.
 
 ---
 
@@ -31,7 +31,7 @@ npm run preview
 |------------|----------------------|-------------|
 | Student    | student@tsec.edu     | student123  |
 | Teacher    | teacher@tsec.edu     | teacher123  |
-| Management | admin@tsec.edu       | admin123    |
+| Admin      | admin@tsec.edu       | admin123    |
 
 The login page also has a **"Fill demo credentials"** button per role.
 
@@ -42,7 +42,7 @@ src/
   data/            mock "database" — departments, rooms, users, timetable
                    generator + overrides, events, seminars
   context/         AuthContext (mock login), DataContext (bookings —
-                   the in-memory state teachers/management mutate),
+                   the in-memory state teachers/admin mutate),
                    NotificationsContext (derives the notification feed)
   utils/           changeDetection.js, conflictDetection.js — the two
                    pieces of "business logic" in the app

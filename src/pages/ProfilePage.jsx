@@ -2,7 +2,7 @@ import { useAuth } from '../context/AuthContext'
 import { departments } from '../data/departments'
 import DashboardCard from '../components/DashboardCard'
 
-const ROLE_LABEL = { student: 'Student', teacher: 'Teacher', management: 'Management' }
+const ROLE_LABEL = { student: 'Student', teacher: 'Teacher', admin: 'Admin' }
 
 export default function ProfilePage() {
   const { user } = useAuth()

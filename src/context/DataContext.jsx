@@ -8,7 +8,7 @@ const DataContext = createContext(null)
 
 // Central place for the mutable, in-memory "database" of the prototype:
 // room bookings, plus any toasts / recent-change log the rest of the app
-// wants to react to. Kept in one context so the Teacher and Management
+// wants to react to. Kept in one context so the Teacher and Admin
 // dashboards both see the same live booking list.
 export function DataProvider({ children }) {
   const [bookings, setBookings] = useState(initialBookings)

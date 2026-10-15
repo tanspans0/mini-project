@@ -21,7 +21,7 @@ export const rooms = [
   { id: 'Seminar Hall 2', building: 'New Building', type: 'Seminar Hall', floor: '4th Floor', capacity: 120 },
 ]
 
-// Live booking / occupancy state — teachers & management mutate this array
+// Live booking / occupancy state — teachers & admin mutate this array
 // through the app; it starts pre-seeded so the room availability page has
 // something to show on first load.
 export const initialBookings = [

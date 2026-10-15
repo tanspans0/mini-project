@@ -4,7 +4,7 @@ import Login from './pages/Login'
 import AppLayout from './components/AppLayout'
 import StudentDashboard from './pages/StudentDashboard'
 import TeacherDashboard from './pages/TeacherDashboard'
-import ManagementDashboard from './pages/ManagementDashboard'
+import AdminDashboard from './pages/AdminDashboard'
 import TimetablePage from './pages/TimetablePage'
 import RoomsPage from './pages/RoomsPage'
 import EventsPage from './pages/EventsPage'
@@ -17,13 +17,13 @@ import { useAuth } from './context/AuthContext'
 function RoleDashboard() {
   const { user } = useAuth()
   if (user?.role === 'teacher') return <TeacherDashboard />
-  if (user?.role === 'management') return <ManagementDashboard />
+  if (user?.role === 'admin') return <AdminDashboard />
   return <StudentDashboard />
 }
 function RoomAccess() {
   const { user } = useAuth()
 
-  if (user?.role === 'teacher' || user?.role === 'management') {
+  if (user?.role === 'teacher' || user?.role === 'admin') {
     return <RoomsPage />
   }
 

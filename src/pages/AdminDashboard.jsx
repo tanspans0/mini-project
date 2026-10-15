@@ -23,7 +23,7 @@ function buildingStats(buildingName, bookings, bookingsForRoomOnDate) {
   }
 }
 
-export default function ManagementDashboard() {
+export default function AdminDashboard() {
   const { bookings, cancelBooking, bookingsForRoomOnDate, recentChanges } = useData()
   const [toasts, setToasts] = useState([])
 

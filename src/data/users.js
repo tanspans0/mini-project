@@ -24,7 +24,7 @@ export const mockUsers = [
   {
     email: 'admin@tsec.edu',
     password: 'admin123',
-    role: 'management',
+    role: 'admin',
     name: 'Dr. S. Iyer',
     department: null,
   },

@@ -5,13 +5,13 @@ import { useAuth } from '../context/AuthContext'
 const ROLES = [
   { id: 'student', label: 'Student' },
   { id: 'teacher', label: 'Teacher' },
-  { id: 'management', label: 'Management' },
+  { id: 'admin', label: 'Admin' },
 ]
 
 const DEMO_CREDS = {
   student: 'student@tsec.edu / student123',
   teacher: 'teacher@tsec.edu / teacher123',
-  management: 'admin@tsec.edu / admin123',
+  admin: 'admin@tsec.edu / admin123',
 }
 
 export default function LoginForm() {

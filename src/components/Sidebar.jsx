@@ -19,7 +19,7 @@ const NAV_BY_ROLE = {
     { to: '/app/notifications', label: 'Notifications', icon: '\u26A0' },
     { to: '/app/profile', label: 'Profile', icon: '\u263A' },
   ],
-  management: [
+  admin: [
     { to: '/app/dashboard', label: 'Dashboard', icon: '\u2302' },
     { to: '/app/timetable', label: 'Timetable', icon: '\u25A6' },
     { to: '/app/rooms', label: 'Room Availability', icon: '\u25A3' },
